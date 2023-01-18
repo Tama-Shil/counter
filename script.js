@@ -1,25 +1,39 @@
 function setInitialValue() {
   document.getElementById("marks-inp").value = 0;
 }
+
+function showGrade(grade) {
+  document.getElementById("grade").innerText = grade;
+}
+
+function IsvalidInput(input) {
+  return (input >= 0 && input <= 100) ? true : false;
+}
+
 function CalculateGrade() {
   const marks = parseInt(document.getElementById("marks-inp").value);
-  console.log(typeof marks);
+
+  if (!IsvalidInput(marks)) {
+    alert("Invalid input");
+    return;
+  }
+
   if (marks >= 0 && marks <= 40) {
-    document.getElementById("grade").innerText = "F";
+    showGrade("F");
   } else if (marks >= 41 && marks <= 50) {
-    document.getElementById("grade").innerText = "D";
+    showGrade("D");
   } else if (marks >= 61 && marks <= 59) {
-    document.getElementById("grade").innerText = "C";
+    showGrade("C");
   } else if (marks >= 60 && marks <= 64) {
-    document.getElementById("grade").innerText = "B-";
+    showGrade("B-");
   } else if (marks >= 65 && marks <= 69) {
-    document.getElementById("grade").innerText = "B";
+    showGrade("B");
   } else if (marks >= 70 && marks <= 70) {
-    document.getElementById("grade").innerText = "A-";
+    showGrade("A-");
   } else if (marks >= 75 && marks <= 79) {
-    document.getElementById("grade").innerText = "A";
+    showGrade("A");
   } else {
-    document.getElementById("grade").innerText = "A+";
+    showGrade("A+");
   }
 
 }
