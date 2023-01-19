@@ -20,12 +20,12 @@ function addItem() {
   const inputText = getInput();
 
   if (inputText === "") {
-    alert("Empty string!!!");
+    alert("Please insert a string!!!");
     return;
   }
 
   if (doesExist(inputText)) {
-    alert("Duplicate!!!!");
+    alert("The string already exists!!!!");
     return;
   }
 
@@ -34,3 +34,4 @@ function addItem() {
   const targetElement = document.getElementById("list");
   targetElement.appendChild(item);
 }
+
